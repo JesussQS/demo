@@ -1,0 +1,61 @@
+@model webapp.Models.Contacto;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Contacto</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Complete Web Form</h1>
+    <form asp-controller="Contacto" asp-action="create">
+    <div class="form-group">    
+    <strong><label asp-for="FirstName"></label></strong><br>
+    <input asp-for="FirstName" class="form-control"><br>
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">  
+    <strong><label asp-for="LastName"></label></strong><br>
+    <input asp-for="LastName" class="form-control"><br>
+    <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">  
+    <strong><label asp-for="Job"></label></strong><br>
+    <input asp-for="Job" class="form-control"><br>
+    <span asp-validation-for="Job" class="text-danger"></span>
+    </div>
+    <div class="form-group">   
+    <strong><label asp-for="Education"></label></strong><br>
+    <input type="radio"  asp-for="Education" value="High School" >
+    <label>High School</label><br>
+    <input type="radio" asp-for="Education" value="College" >
+    <label>College</label><br>
+    <input type="radio" asp-for="Education" value="Grad School" >
+    <label>Grad School</label><br>
+    <span asp-validation-for="Education" class="text-danger"></span>
+    </div><br>
+    <div class="form-group">  
+    <strong><label asp-for="Sex"></label></strong><br>
+    <input type="radio"  asp-for="Sex" value="Male" >
+    <label>Male</label><br>
+    <input type="radio" asp-for="Sex" value="Female" >
+    <label>Female</label><br>
+    <input type="radio" asp-for="Sex" value="NoBinary" >
+    <label>Prefer not to say</label><br><br>
+    <span asp-validation-for="Sex" class="text-danger"></span>
+    </div>
+    <strong><label asp-for="Experience"></label></strong><br>
+    <select asp-for="Experience" asp-items="Model.YearsExperiencie" class="form-control"></select><br>
+    <div class="form-group"> 
+    <Strong><label asp-for="Date"></label></Strong><br>
+    <input asp-for="Date" value="Date" class="form-control"><br>
+    <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+    </form>
+    
+</body>
+</html>
